@@ -14,9 +14,9 @@ y = le.fit_transform(y)
 
 x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2, random_state=2)
 
-model=SVC()
+model=SVC(probability=True)
 model.fit(x_train,y_train)
 
 score = model.score(x_test,y_test)
 
-joblib.dump(model, "model/iris_mdl.pkl")
+joblib.dump(model, "model/iris_mdl_prob.pkl")
